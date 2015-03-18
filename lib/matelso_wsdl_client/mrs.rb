@@ -235,7 +235,7 @@ module MatelsoWsdlClient::MRS
     
     # Shortcut so that we don't have to write the same line of code every time.
     def with_client_and_defaults(&block)
-      client, defaults = Savon::Client.new(@mrs_wsdl_url), (@defaults["mrs"] || {})
+      client, defaults = Savon::Client.new(wsdl: @mrs_wsdl_url), (@defaults["mrs"] || {})
       yield(client, defaults)
     end
     
